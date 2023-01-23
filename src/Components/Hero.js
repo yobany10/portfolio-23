@@ -108,7 +108,7 @@ export default function Hero(props) {
                         key={item.name}
                         onClick={() => {
                           setMobileMenuOpen(false)
-                          item.ref.scrollIntoView({behavior: 'smooth'})
+                          setTimeout(() => item.ref.scrollIntoView({behavior: 'smooth'}), 0)
                         }}
                         className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
                       >
