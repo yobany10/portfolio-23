@@ -127,8 +127,8 @@ export default function Hero(props) {
           <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div>
               <img
-              className='w-36 h-36 rounded-full mx-auto mb-8 object-cover'
-              src='https://firebasestorage.googleapis.com/v0/b/portfolio-23-29cb7.appspot.com/o/yobany.jpg?alt=media&token=2106beb3-659c-471a-9c94-e948e646b8a7'
+              className='w-32 h-32 rounded-full mx-auto mb-8 object-cover'
+              src='https://firebasestorage.googleapis.com/v0/b/portfolio-23-29cb7.appspot.com/o/yobany.jpeg?alt=media&token=a14bac52-564c-4ef7-b0b5-e75a1e3d306d'
               draggable={false}
               />
               <div>
