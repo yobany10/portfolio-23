@@ -25,7 +25,7 @@ const projectData = [
     {
         name: 'Recetas',
         description: 'Hungry? Recetas can help you find some recipes that are based on the food or dish of your choice.',
-        image: 'https://firebasestorage.googleapis.com/v0/b/portfolio-23-29cb7.appspot.com/o/recetas.png?alt=media&token=fb1f2706-0d86-435e-a460-235512960960',
+        image: 'https://firebasestorage.googleapis.com/v0/b/portfolio-23-29cb7.appspot.com/o/recetas3.png?alt=media&token=e8952dc1-6378-4f32-8841-27290a04e349',
         github: 'https://github.com/yobany10/recetas',
         demo: 'https://recetas-8c07d.web.app/'
     }
