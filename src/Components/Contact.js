@@ -1,8 +1,8 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-const Contact = () => {
+const Contact = (props) => {
     return (
-        <div className="grid gap-y-20 bg-neutral-900 py-20 px-4">
+        <div className="grid gap-y-20 bg-neutral-900 py-20 px-4" ref={props.contactRef}>
             <div className="grid gap-8 max-w-screen-lg mx-auto">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 float-left text-orange-200 mr-4">

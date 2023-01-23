@@ -1,6 +1,6 @@
-const About = () => {
+const About = (props) => {
     return (
-        <div className="relative px-6 lg:px-8">
+        <div className="relative px-6 lg:px-8" ref={props.aboutRef}>
             <div className='grid max-w-screen-lg mx-auto py-32'>
                 <div className='flex gap-8 justify-self-center'>
                 <p className='wave inline-block text-5xl justify-self-right self-center'>👋</p>

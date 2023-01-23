@@ -3,14 +3,14 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Projects', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Contact', href: '#' },
-]
-
-export default function Hero() {
+export default function Hero(props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
+  const navigation = [
+    { name: 'Projects', href: '#', ref: props.projectsRef.current },
+    { name: 'About', href: '#', ref: props.aboutRef.current },
+    { name: 'Contact', href: '#', ref: props.contactRef.current },
+  ]
 
   return (
     <div className="isolate bg-white">
@@ -64,9 +64,16 @@ export default function Hero() {
             </div>
             <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
               {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="font-semibold text-gray-900 hover:text-gray-900">
+                <button
+                  type='button'
+                  key={item.name}
+                  onClick={() => {
+                    item.ref.scrollIntoView({behavior: 'smooth'})
+                  }}
+                  className="font-semibold text-gray-900 hover:text-gray-900"
+                >
                   {item.name}
-                </a>
+                </button>
               ))}
             </div>
           </nav>
@@ -96,13 +103,17 @@ export default function Hero() {
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
                     {navigation.map((item) => (
-                      <a
+                      <button
+                        type='button'
                         key={item.name}
-                        href={item.href}
+                        onClick={() => {
+                          setMobileMenuOpen(false)
+                          item.ref.scrollIntoView({behavior: 'smooth'})
+                        }}
                         className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -116,8 +127,8 @@ export default function Hero() {
           <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div>
               <img
-              className='w-36 h-36 rounded-full mx-auto mb-8'
-              src='https://images.unsplash.com/photo-1542272201-b1ca555f8505?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80'
+              className='w-36 h-36 rounded-full mx-auto mb-8 object-cover'
+              src='https://firebasestorage.googleapis.com/v0/b/portfolio-23-29cb7.appspot.com/o/yobany.jpg?alt=media&token=2106beb3-659c-471a-9c94-e948e646b8a7'
               draggable={false}
               />
               <div>
@@ -128,24 +139,26 @@ export default function Hero() {
                 Front-End Developer with Graphic Design experience. Based in Charlotte, NC.
                 </p>
                 <div className="mt-8 flex gap-x-4 sm:justify-center">
-                  <a
-                    href="#"
+                  <button
+                    type='button'
                     className="inline-block rounded-lg bg-orange-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-orange-600 hover:bg-orange-700 hover:ring-orange-700"
+                    onClick={() => props.projectsRef.current.scrollIntoView({behavior: 'smooth'})}
                   >
                     View Projects
                     <span className="text-orange-200" aria-hidden="true">
                       &rarr;
                     </span>
-                  </a>
-                  <a
-                    href="#"
+                  </button>
+                  <button
+                    type='button'
                     className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+                    onClick={() => props.contactRef.current.scrollIntoView({behavior: 'smooth'})}
                   >
                     Contact Me
                     <span className="text-gray-400" aria-hidden="true">
                       &rarr;
                     </span>
-                  </a>
+                  </button>
                 </div>
               </div>
               <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">

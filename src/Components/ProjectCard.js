@@ -1,13 +1,13 @@
 const ProjectCard = (props) => {
     return (
         <div className='grid gap-2'>
-            <div className="grid gap-2 self-start cursor-pointer" onClick={() => window.open(props.project.demo)}>
+            <div className="grid gap-2 self-start cursor-pointer text-slate-50 hover:text-orange-500" onClick={() => window.open(props.project.demo)}>
                 <img
-                    className="rounded shadow-lg"
+                    className="rounded shadow-lg object-cover"
                     src={props.project.image}
                     alt={props.project.name}
                 />
-                <p className="text-xl font-bold text-slate-50">{props.project.name}</p>
+                <p className="text-xl font-bold">{props.project.name}</p>
                 <p className="text-slate-300 italic">{props.project.description}</p>
             </div>
             <div className="flex gap-2 self-end">
