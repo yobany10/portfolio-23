@@ -10,7 +10,7 @@ const projectData = [
     },
     {
         name: 'POS PRO',
-        description: 'POS PRO is a minimalistic Point-of-Sale (POS) system. It is a great for users who are looking a quick and simple solution.',
+        description: 'POS PRO is a minimalistic Point-of-Sale (POS) system. It is great for users who are looking for a quick and simple solution.',
         image: 'https://firebasestorage.googleapis.com/v0/b/portfolio-23-29cb7.appspot.com/o/pospro.png?alt=media&token=ad2c0f3b-b42d-4ec6-a26d-c12fc6ea3431',
         github: 'https://github.com/yobany10/scorebase-2',
         demo: 'https://pospro.netlify.app/'
