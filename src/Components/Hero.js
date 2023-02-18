@@ -1,16 +1,21 @@
 /* This example requires Tailwind CSS v3.0+ */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 export default function Hero(props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [stateTrigger, setStateTrigger] = useState(0)
   
   const navigation = [
     { name: 'Projects', href: '#', ref: props.projectsRef.current },
     { name: 'About', href: '#', ref: props.aboutRef.current },
     { name: 'Contact', href: '#', ref: props.contactRef.current },
   ]
+
+  useEffect(() => {
+    setStateTrigger(prev => prev + 1)
+  },[])
 
   return (
     <div className="isolate bg-white">
@@ -108,7 +113,7 @@ export default function Hero(props) {
                         key={item.name}
                         onClick={() => {
                           setMobileMenuOpen(false)
-                          setTimeout(() => item.ref.scrollIntoView({behavior: 'smooth'}), 0)
+                          item.ref.scrollIntoView({behavior: 'smooth'})
                         }}
                         className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
                       >
